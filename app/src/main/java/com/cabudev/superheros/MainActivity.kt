@@ -1,5 +1,6 @@
 package com.cabudev.superheros
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.SearchView
 import androidx.activity.enableEdgeToEdge
@@ -8,6 +9,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.cabudev.superheros.SuperHeroDetailActivity.Companion.EXTRA_ID
 import com.cabudev.superheros.databinding.ActivityMainBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -55,7 +57,7 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-        adapter = SuperHeroAdapter()
+        adapter = SuperHeroAdapter(){ superHeroId -> navigateToDetail(superHeroId) }
         binding.rvSuperHero.setHasFixedSize(true)
         binding.rvSuperHero.layoutManager = LinearLayoutManager(this)
         binding.rvSuperHero.adapter = adapter
@@ -80,7 +82,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getRetrofit(): Retrofit {
-        return Retrofit.Builder().baseUrl("https://superheroapi.com/").addConverterFactory(GsonConverterFactory.create()).build()
+        return Retrofit.Builder().baseUrl("https://superheroapi.com/")
+            .addConverterFactory(GsonConverterFactory
+                .create())
+                    .build()
 
+    }
+
+    private fun navigateToDetail(id:String){
+        val intent = Intent(this,SuperHeroDetailActivity::class.java)
+        intent.putExtra(EXTRA_ID,id)
+        startActivity(intent)
     }
 }
