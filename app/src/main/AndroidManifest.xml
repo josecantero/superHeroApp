@@ -15,6 +15,9 @@
         android:theme="@style/Theme.SuperHeros"
         tools:targetApi="31">
         <activity
+            android:name=".SuperHeroDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
