@@ -1,13 +1,16 @@
 package com.cabudev.superheros
 
 import android.os.Bundle
+import android.util.TypedValue
 import android.view.LayoutInflater
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
 import com.cabudev.superheros.databinding.ActivitySuperHeroDetailBinding
+import com.squareup.picasso.Picasso
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -29,11 +32,11 @@ class SuperHeroDetailActivity : AppCompatActivity() {
 
         binding = ActivitySuperHeroDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        retrofit = getRetrofit()
         val id: String = intent.getStringExtra(EXTRA_ID).orEmpty()
         getSuperHeroInformation(id)
 
-        retrofit = getRetrofit()
+
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -41,6 +44,43 @@ class SuperHeroDetailActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+    }
+
+
+
+    private fun createUi(superHero: SuperHeroDetailResponse) {
+        Picasso.get().load(superHero.image.url).into(binding.ivSuperHeroDetailImage)
+        binding.tvDetailSuperHeroName.text = superHero.name
+        prepareStats(superHero.powerstats)
+    }
+
+    private fun prepareStats(powerStats: PowerStatsResponse) {
+
+        updateParams(binding.vSpInteligence, powerStats.intelligence)
+        updateParams(binding.vSpStrengt, powerStats.strength)
+        updateParams(binding.vSpSpeed, powerStats.speed)
+        updateParams(binding.vSpDurability, powerStats.durability)
+        updateParams(binding.vSpPower, powerStats.power)
+        updateParams(binding.vSpCombat, powerStats.combat)
+    }
+
+    private fun updateParams(view: View, stat: String) {
+        val params = view.layoutParams
+        params.height = pixelToDp(stat.toFloat())
+        view.layoutParams = params
+    }
+
+    private fun pixelToDp(pixel: Float): Int {
+        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, pixel, resources.displayMetrics).toInt()
+    }
+
+    private fun getRetrofit(): Retrofit {
+        return Retrofit.Builder().baseUrl("https://superheroapi.com/")
+            .addConverterFactory(
+                GsonConverterFactory
+                .create())
+            .build()
+
     }
 
     private fun getSuperHeroInformation(id: String) {
@@ -52,18 +92,5 @@ class SuperHeroDetailActivity : AppCompatActivity() {
                 runOnUiThread{ createUi(superHeroDetail.body()!!)}
             }
         }
-    }
-
-    private fun createUi(superHero: SuperHeroDetailResponse) {
-
-    }
-
-    private fun getRetrofit(): Retrofit {
-        return Retrofit.Builder().baseUrl("https://superheroapi.com/")
-            .addConverterFactory(
-                GsonConverterFactory
-                .create())
-            .build()
-
     }
 }

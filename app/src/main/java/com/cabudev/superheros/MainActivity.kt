@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-        adapter = SuperHeroAdapter(){ superHeroId -> navigateToDetail(superHeroId) }
+        adapter = SuperHeroAdapter{ superHeroId -> navigateToDetail(superHeroId) }
         binding.rvSuperHero.setHasFixedSize(true)
         binding.rvSuperHero.layoutManager = LinearLayoutManager(this)
         binding.rvSuperHero.adapter = adapter

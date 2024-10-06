@@ -7,4 +7,108 @@
     android:layout_height="match_parent"
     tools:context=".SuperHeroDetailActivity">
 
+    <ImageView
+        android:id="@+id/ivSuperHeroDetailImage"
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:cardCornerRadius="25dp"
+        android:elevation="10dp"
+        android:layout_marginTop="240dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvDetailSuperHeroName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Hola"
+                android:textSize="30sp"
+                android:gravity="center_horizontal"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginVertical="8dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="55dp"
+            android:layout_marginHorizontal="6dp"
+            android:orientation="horizontal"
+            android:gravity="bottom">
+
+            <View
+                android:id="@+id/vSpInteligence"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/black"
+                android:layout_marginHorizontal="6dp"
+                android:backgroundTint="@color/spStatInteligence"/>
+
+            <View
+                android:id="@+id/vSpStrengt"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/black"
+                android:layout_marginHorizontal="6dp"
+                android:backgroundTint="@color/spStatStrengt"/>
+
+            <View
+                android:id="@+id/vSpSpeed"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/black"
+                android:layout_marginHorizontal="6dp"
+                android:backgroundTint="@color/spStatSpeed"/>
+
+            <View
+                android:id="@+id/vSpDurability"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/black"
+                android:layout_marginHorizontal="6dp"
+                android:backgroundTint="@color/spStatDurability"/>
+
+            <View
+                android:id="@+id/vSpPower"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/black"
+                android:layout_marginHorizontal="6dp"
+                android:backgroundTint="@color/spStatPower"/>
+
+            <View
+                android:id="@+id/vSpCombat"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/black"
+                android:layout_marginHorizontal="6dp"
+                android:backgroundTint="@color/spStatCombat"/>
+
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

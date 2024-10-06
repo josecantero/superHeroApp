@@ -10,4 +10,12 @@
 
     <!-- SuperHero -->
     <color name="purple_transparecy">#885019B1</color>
+
+    <!-- SuperHero Stats -->
+    <color name="spStatInteligence">#2196F3</color>
+    <color name="spStatStrengt">#673AB7</color>
+    <color name="spStatSpeed">#FF9800</color>
+    <color name="spStatDurability">#FF5722</color>
+    <color name="spStatPower">#E91E63</color>
+    <color name="spStatCombat">#DD0B0B</color>
 </resources>
