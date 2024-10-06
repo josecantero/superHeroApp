@@ -30,7 +30,8 @@
         
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/tvDetailSuperHeroName"
@@ -42,11 +43,27 @@
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:layout_marginVertical="8dp"/>
+            <TextView
+                android:id="@+id/tvRealName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Real Name"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/tvPublisher"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Publisher"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="100dp"
             android:layout_marginTop="55dp"
             android:layout_marginHorizontal="6dp"
             android:orientation="horizontal"
@@ -57,58 +74,135 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:background="@color/black"
-                android:layout_marginHorizontal="6dp"
-                android:backgroundTint="@color/spStatInteligence"/>
+                android:layout_marginHorizontal="1dp"
+                android:background="@color/spStatInteligence"/>
 
             <View
                 android:id="@+id/vSpStrengt"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:background="@color/black"
-                android:layout_marginHorizontal="6dp"
-                android:backgroundTint="@color/spStatStrengt"/>
+                android:layout_marginHorizontal="1dp"
+                android:background="@color/spStatStrengt"/>
 
             <View
                 android:id="@+id/vSpSpeed"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:background="@color/black"
-                android:layout_marginHorizontal="6dp"
-                android:backgroundTint="@color/spStatSpeed"/>
+                android:layout_marginHorizontal="1dp"
+                android:background="@color/spStatSpeed"/>
 
             <View
                 android:id="@+id/vSpDurability"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:background="@color/black"
-                android:layout_marginHorizontal="6dp"
-                android:backgroundTint="@color/spStatDurability"/>
+                android:layout_marginHorizontal="1dp"
+                android:background="@color/spStatDurability"/>
 
             <View
                 android:id="@+id/vSpPower"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:background="@color/black"
-                android:layout_marginHorizontal="6dp"
-                android:backgroundTint="@color/spStatPower"/>
+                android:layout_marginHorizontal="1dp"
+                android:background="@color/spStatPower"/>
 
             <View
                 android:id="@+id/vSpCombat"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:background="@color/black"
-                android:layout_marginHorizontal="6dp"
-                android:backgroundTint="@color/spStatCombat"/>
+                android:layout_marginHorizontal="1dp"
+                android:background="@color/spStatCombat"/>
 
 
+            </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="150dp">
 
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="115dp"
+                android:paddingTop="50dp"
+                android:rotation="-90"
+                android:layout_weight="1"
+                android:text="Inteligencia"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:textColor="@color/black"
+                android:textAlignment="textEnd" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="115dp"
+                android:paddingTop="50dp"
+                android:rotation="-90"
+                android:layout_weight="1"
+                android:text="Fuerza"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:textColor="@color/black"
+                android:textAlignment="textEnd"
+                android:layout_marginHorizontal="1dp"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="115dp"
+                android:paddingTop="50dp"
+                android:rotation="-90"
+                android:layout_weight="1"
+                android:text="Velocidad"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:textColor="@color/black"
+                android:textAlignment="textEnd"
+                android:layout_marginHorizontal="1dp"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="115dp"
+                android:paddingTop="50dp"
+                android:rotation="-90"
+                android:layout_weight="1"
+                android:text="Dirabilidad"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:textColor="@color/black"
+                android:textAlignment="textEnd"
+                android:layout_marginHorizontal="1dp"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="115dp"
+                android:paddingTop="50dp"
+                android:rotation="-90"
+                android:layout_weight="1"
+                android:text="Poder"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:textColor="@color/black"
+                android:textAlignment="textEnd"
+                android:layout_marginHorizontal="1dp"
+                />
+            <TextView
+                android:layout_width="1dp"
+                android:layout_height="115dp"
+                android:paddingTop="50dp"
+                android:rotation="-90"
+                android:layout_weight="1"
+                android:text="Combate"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:textColor="@color/black"
+                android:textAlignment="textEnd"
+                android:layout_marginHorizontal="1dp"
+                />
         </LinearLayout>
+
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
