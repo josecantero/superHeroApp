@@ -70,13 +70,15 @@ class MainActivity : AppCompatActivity() {
             if(myResponse.isSuccessful){
                 val response: SuperHeroDataResponse? = myResponse.body()
                 runOnUiThread {
-                    if (response != null) {
-                        adapter.updateList(response.superHeroes)
+                    if (!response?.response.equals("error")) {
+                        response?.let { adapter.updateList(it.superHeroes) }
+                    }else{
+                        binding.progressBar.isVisible = false
+                        initUI()
                     }
-                    binding.progressBar.isVisible = false
-
                 }
-
+            }else{
+                binding.progressBar.isVisible = false
             }
         }
     }
